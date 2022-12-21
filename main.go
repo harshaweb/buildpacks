@@ -1,19 +1,15 @@
 package main
 
 import (
-	"fmt"
 	bp "dauqu.com/buildpacks/buildpacks"
+	"fmt"
 )
 
 func main() {
 
-	//Get current directory
-	// dir, err := os.Getwd()
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-
 	project_dir := "/Users/harshaweb/Documents/go/vhost"
+	project_name := "my_name"
+	project_port := "8000"
 
 	//Dectect language
 	language, err := bp.DetectLanguage(project_dir)
@@ -24,15 +20,14 @@ func main() {
 	fmt.Println(language)
 
 	//Create dockerfile
-	err = bp.CreateDockerfile(project_dir, "golang", "8000", language)
+	err = bp.CreateDockerfile(project_dir, project_name, project_port, language)
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	// //Build image
-	err = bp.BuildImage(project_dir, "golang")
+	err = bp.BuildImage(project_dir, project_name)
 	if err != nil {
 		fmt.Println(err)
 	}
 }
-
