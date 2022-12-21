@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	bp "dauqu.com/buildpacks/buildpacks"
 )
 
@@ -35,18 +34,5 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-
-	// command := "DOCKER_BUILDKIT=1 docker build ."
-
-	// //Execute command
-	// cmd := exec.Command("sh", "-c", command)
-	// //Get html output
-	// cmd.Stdout = os.Stdout
-	// cmd.Stderr = os.Stderr
-	// err := cmd.Run()
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-
 }
 
