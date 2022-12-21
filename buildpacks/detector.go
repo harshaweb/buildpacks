@@ -139,6 +139,15 @@ func DetectLanguage(Source string) (res string, err error) {
 			return "dino", nil
 		}
 
+		//Detect perl6 project by checking if there is a META6.json file or not
+		if file.Name() == "META6.json" {
+			return "perl6", nil
+		}
+
+		//Detect scela project by checking if there is a build.sbt file or not
+		if file.Name() == "build.sbt" {
+			return "scala", nil
+		}
 	}
 
 	//Return no project detected
