@@ -17,8 +17,6 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Println(language)
-
 	//Create dockerfile
 	err = bp.CreateDockerfile(project_dir, project_name, project_port, language)
 	if err != nil {
