@@ -1,11 +1,9 @@
 
-	FROM golang:1.16-alpine
-	WORKDIR /Users/harshaweb/Documents/go/vhost
-	COPY go.mod ./
-	COPY go.sum ./
-	COPY *.go ./
-	RUN go get
-	RUN go build main.go
+	FROM node:16
+	WORKDIR ./projects/news-backend
+	COPY package*.json ./
+	COPY . ./app
 	EXPOSE 8000
-	CMD [ "./main" ]
+	RUN npm install
+	CMD [ "node", "index.js" ]
 	

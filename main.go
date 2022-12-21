@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	project_dir := "/Users/harshaweb/Documents/go/vhost"
+	project_dir := "/Users/Harsh singh/Documents/node/express/news-backend"
 	project_name := "my_name"
 	project_port := "8000"
 

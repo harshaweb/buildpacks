@@ -26,7 +26,8 @@ func BuildImage(Workdir string, Name string) error {
 	//Execute command
 	if os_name == "windows" {
 
-		command := "DOCKER_BUILDKIT=1 docker build -t " + Name + " -f " + dockerfile + " " + Workdir
+		//Command for windows
+		command := `docker build -t ` + Name + ` .`
 		cmd := exec.Command("cmd", "/C", command)
 		//Get html output
 		cmd.Stdout = os.Stdout
